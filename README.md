@@ -8,7 +8,7 @@ Html
 Css avec Scss
 
 
-Livrables attendus
+ Livrables attendus
 
 
 Contenu des pages
