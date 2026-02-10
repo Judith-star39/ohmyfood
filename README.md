@@ -8,6 +8,8 @@ Html
 Css avec Scss
 
 Livrables attendus
+
+
 Contenu des pages
 Page d’accueil (x1)
 Affichage de la localisation des restaurants. À terme, il sera possible de choisir sa
