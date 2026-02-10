@@ -1,0 +1,356 @@
+/* =========================
+   VARIABLES
+========================= */
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
+
+$dark: #353535;
+$light: #f6f6f6;
+$gray: #eaeaea;
+
+$radius-lg: 25px;
+$radius-card: 15px;
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+/* =========================
+   MIXINS
+========================= */
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+/* =========================
+   GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  position: relative;
+  @include flex-center;
+  padding: 15px;
+  background: white;
+  box-shadow: $shadow-sm;
+
+  img {
+    height: 36px;
+    width: 197px;
+  }
+}
+
+.header_i {
+  font-size: 20px;
+  color: #333;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* =========================
+   COVER
+========================= */
+.cover {
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+  }
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: $light;
+  border-radius: $radius-lg $radius-lg 0 0;
+  margin-top: -48px;
+  padding: 20px 15px;
+  gap: 40px;
+
+  @include tablet {
+    margin: -58px 192px 0;
+    padding: 30px 40px;
+  }
+
+  @include desktop {
+    max-width: 1050px;
+    margin: -30px 192px 0 192px;
+    padding: 0px 11%;
+  }
+}
+
+/* =========================
+   APPARITION DES MENUS
+========================= */
+.menu_group {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+
+  &.delay_1 { animation-delay: 0.2s; }
+  &.delay_2 { animation-delay: 0.6s; }
+  &.delay_3 { animation-delay: 1s; }
+
+  /*@include desktop {
+    max-width: 800px;
+    margin: 0 auto;
+  } */
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TITLE
+========================= */
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  h1 {
+    font-family: "Shrikhand";
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  @include desktop {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.heart {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 10%;
+
+  &:hover {
+    font-weight: 900;
+    background: linear-gradient(180deg, $primary, $secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scale(1.1);
+  }
+
+  @include desktop {
+    font-size: 22px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+h2 {
+  margin: 30px 0 15px;
+  font-weight: 300;
+  font-size: 18px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: $tertiary;
+    margin-top: 5px;
+  }
+}
+
+/* =========================
+   DISH
+========================= */
+.dish {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: white;
+  padding: 15px;
+  border-radius: $radius-card;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  &_text {
+    flex: 1;
+    min-width: 0;
+
+    h3,
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  &_check {
+    position: absolute;
+    right: -60px;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background: $tertiary;
+    @include flex-center;
+    transition: right 0.4s ease;
+
+    i {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &:hover &_check {
+    right: 0;
+  }
+
+  &:hover .price {
+    transform: translateX(-60px);
+  }
+}
+
+.price {
+  font-weight: 600;
+  padding: 15px 15px 15px 0;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.4s ease;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+  background: linear-gradient(180deg, $secondary, $primary);
+  color: white;
+  border: none;
+  border-radius: $radius-lg;
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 218px;
+  margin: 30px auto;
+  display: block;
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark;
+  color: white;
+  padding: 30px 20px;
+  gap: 16px;
+
+  h3 {
+    font-family: "Shrikhand";
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  @include tablet {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
+
+    ul {
+      display: flex;
+      gap: 30px;
+      padding-left: 60px;
+      padding-top: 15px;
+      align-items: center;
+    }
+  }
+}
+
+.footer_logo {
+  width: 140px;
+  filter: brightness(0) invert(1);
+
+  @include tablet {
+    width: 110px;
+  }
+}
