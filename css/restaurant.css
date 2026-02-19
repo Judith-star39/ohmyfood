@@ -86,12 +86,6 @@ header img {
 .menu_group.delay_3 {
   animation-delay: 1s;
 }
-.menu_group {
-  /*@include desktop {
-    max-width: 800px;
-    margin: 0 auto;
-  } */
-}
 
 @keyframes fadeUp {
   to {

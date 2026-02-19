@@ -117,10 +117,7 @@ header {
   &.delay_2 { animation-delay: 0.6s; }
   &.delay_3 { animation-delay: 1s; }
 
-  /*@include desktop {
-    max-width: 800px;
-    margin: 0 auto;
-  } */
+  
 }
 
 @keyframes fadeUp {
