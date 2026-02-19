@@ -1,12 +1,6 @@
-/* =========================
-   VARIABLES
-========================= */
-/* =========================
-   MIXINS
-========================= */
-/* =========================
-   GLOBAL
-========================= */
+/* VARIABLES */
+/* MIXINS */
+/* GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,9 +8,7 @@
   font-family: "Roboto";
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 header {
   position: relative;
   display: flex;
@@ -41,9 +33,7 @@ header img {
   transform: translateY(-50%);
 }
 
-/* =========================
-   COVER
-========================= */
+/* COVER */
 .cover {
   width: 100%;
   height: 275px;
@@ -57,9 +47,7 @@ header img {
   z-index: -1;
 }
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 .menu {
   display: flex;
   flex-direction: column;
@@ -71,7 +59,7 @@ header img {
 }
 @media (min-width: 768px) {
   .menu {
-    margin: -58px 192px 0;
+    margin: -30px 192px 0;
     padding: 30px 40px;
   }
 }
@@ -83,9 +71,7 @@ header img {
   }
 }
 
-/* =========================
-   APPARITION DES MENUS
-========================= */
+/* APPARITION DES MENUS */
 .menu_group {
   opacity: 0;
   transform: translateY(20px);
@@ -113,9 +99,7 @@ header img {
     transform: translateY(0);
   }
 }
-/* =========================
-   TITLE
-========================= */
+/* TITLE */
 .title {
   display: flex;
   justify-content: space-between;
@@ -156,9 +140,7 @@ header img {
   }
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 h2 {
   margin: 30px 0 15px;
   font-weight: 300;
@@ -173,9 +155,7 @@ h2::after {
   margin-top: 5px;
 }
 
-/* =========================
-   DISH
-========================= */
+/* DISH */
 .dish {
   position: relative;
   overflow: hidden;
@@ -236,9 +216,7 @@ h2::after {
   transition: transform 0.4s ease;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 button {
   background: linear-gradient(180deg, #ff79da, #9356dc);
   color: white;
@@ -257,9 +235,7 @@ button:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
   display: flex;
   flex-direction: column;
@@ -284,6 +260,7 @@ footer a {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 footer i {
   font-size: 18px;
@@ -293,12 +270,13 @@ footer i {
     flex-direction: row-reverse;
     align-items: center;
     gap: 40px;
+    font-size: 12px;
   }
   footer ul {
     display: flex;
-    gap: 30px;
-    padding-left: 60px;
-    padding-top: 15px;
+    gap: 20px;
+    padding-left: 40px;
+    padding-top: 10px;
     align-items: center;
   }
 }
