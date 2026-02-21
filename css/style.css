@@ -109,7 +109,7 @@ a {
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 .btn_explorer:hover {
@@ -138,7 +138,7 @@ a {
   background: #f7f7f7;
   height: 75px;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 .fonctionnement_btn i {
   font-size: 16px;
